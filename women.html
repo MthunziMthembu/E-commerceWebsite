@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <style>
+        </style>
+        </head>
+        <body>
+          
+        <div class="topnav">
+          <div class="container">
+            <a class="navbar-brand" href="homepage.html">
+              <img src="IMAGES/logo.jpg" alt="" width="300" height="100">
+            </a>
+          </div>
+          <a class="active" href="homepage.html">Home</a>
+          <a href="women.html">Women</a>
+          <a href="men.html">Men</a>
+          <a href="brands.html">Brands</a>
+          <a href="bestsellers.html">Best Sellers</a>
+
+        </div>
+        
+        <div style="padding-left:16px">
+        </div>
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shades Shop</title>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    :root { --rail:#f2f2f2; --muted:#6b7280; --ink:#111827; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; color:#111; background:#fff; }
+    h1,h2 { margin:0 0 .5rem; }
+    img { max-width: 100%; display:block; }
+
+    /* Page header */
+    header { border-bottom:1px solid var(--rail); }
+    .nav { max-width:1200px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; gap:12px; }
+    .logo { display:flex; align-items:center; gap:.5rem; text-decoration:none; color:inherit; font-weight:600; }
+
+    /* Main layout: products + cart */
+    .container { max-width:1200px; margin:0 auto; padding:16px; }
+    .title { text-align:center; margin-bottom:16px; }
+    .layout { display:grid; grid-template-columns: minmax(0,1fr) 360px; gap:24px; align-items:start; }
+
+    /* Product grid */
+    #shop { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:16px; }
+    .food-box { border:1px solid var(--rail); border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:8px; }
+    .food-box .pic { aspect-ratio: 1 / 1; overflow:hidden; border-radius:8px; background:#fafafa; display:flex; align-items:center; justify-content:center; }
+    .food-title { font-size:16px; }
+    .food-price { font-weight:700; }
+    .add-cart { margin-left:auto; font-size:22px; cursor:pointer; }
+
+    /* Cart (now a static sidebar) */
+    .cart { position:sticky; top:16px; width:100%; background:#fff; border:1px solid var(--rail); border-radius:12px; padding:16px; display:flex; flex-direction:column; gap:12px; }
+    .cart-title { font-weight:700; }
+    .cart-content { max-height:60vh; overflow:auto; }
+    .cart-box { display:grid; grid-template-columns:64px 1fr 24px; gap:.75rem; align-items:center; padding:.5rem 0; border-bottom:1px solid var(--rail); }
+    .cart-img { width:64px; height:64px; object-fit:cover; border-radius:8px; background:#f7f7f7; }
+    .detail-box { display:flex; flex-direction:column; gap:6px; }
+    .price-box { display:flex; gap:8px; color:var(--muted); font-size:14px; }
+    .qty { display:inline-flex; align-items:center; gap:.5rem; }
+    .qty-btn { width:28px; height:28px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; font-size:18px; line-height:1; }
+    .qty-value { min-width:1.5rem; text-align:center; }
+    .cart-remove { cursor:pointer; }
+
+    .total { display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--rail); font-weight:700; }
+    .btn-buy { padding:10px 12px; border:0; border-radius:8px; background:#111827; color:#fff; cursor:pointer; }
+
+    /* Toasts */
+    .toast { position:fixed; top:16px; right:16px; display:flex; flex-direction:column; gap:8px; z-index:10000; }
+    .toast-item { padding:10px 12px; background:#111827; color:#fff; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,.18); font-size:14px; opacity:.98; }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 820px) {
+      .layout { grid-template-columns: 1fr; }
+      .cart { position:relative; top:auto; }
+    }
+  </style>
+</head>
+<body>
+  <style>
+    header {
+      background-color:black;
+      color: white;
+    }
+  </style>
+  <header>
+    <div class="nav">
+      <a href="#" class="logo">
+        <ion-icon name="glasses-outline"></ion-icon>
+        Get the hottest and latest Shades!
+      </a>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
+        <ion-icon name="cart"></ion-icon>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="title">Discover the Best Shades</h2>
+
+    <section class="layout">
+      <!-- LEFT: Products -->
+      <div id="shop">
+        <!-- Product 1 -->
+        <div class="food-box"
+             data-sku="MK2186"
+             data-title="Michael Kors - MK2186"
+             data-price="2270"
+             data-img="IMAGES/michaelkors women/michaelkors1.jpg">
+          <div class="pic"><img src="IMAGES/MichaelKors women/MichaelKors1.jpg" class="food-img" alt="Michael Kors - MK2186"></div>
+          <h3 class="food-title">Michael Kors- MK2186</h3>
+          <span class="food-price">R2270.00</span>
+          <ion-icon name="cart" class="add-cart" title="Add to cart"></ion-icon>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="food-box"
+             data-sku="MK24323"
+             data-title="Michael Kors - MK24323"
+             data-price="2499"
+             data-img="IMAGES/michaelkors Women/michaelkors2.jpg">
+          <div class="pic"><img src="IMAGES/MichaelKors women/MichaelKors2.jpg" class="food-img" alt="Michael Kors - MK24323"></div>
+          <h3 class="food-title">Ray-Ban - RB24323 State Street</h3>
+          <span class="food-price">R2499.00</span>
+          <ion-icon name="cart" class="add-cart" title="Add to cart"></ion-icon>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="food-box"
+             data-sku="P45432"
+             data-title="Prada P45432"
+             data-price="2599"
+             data-img="IMAGES/prada women/prada1.jpg">
+          <div class="pic"><img src="IMAGES/Prada Women/prada1.jpg" class="food-img" alt="Prada - P45432"></div>
+          <h3 class="food-title">Ray-Ban - RB45432 State Street</h3>
+          <span class="food-price">R2599.00</span>
+          <ion-icon name="cart" class="add-cart" title="Add to cart"></ion-icon>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="food-box"
+             data-sku="4B2186"
+             data-title="Prada - 4B2186"
+             data-price="6520"
+             data-img="IMAGES/Prada Women/prada2.jpg">
+          <div class="pic"><img src="IMAGES/Prada Women/prada2.jpg" class="food-img" alt="Prada - 4B2186"></div>
+          <h3 class="food-title">Prada - 4B2186</h3>
+          <span class="food-price">R6520.00</span>
+          <ion-icon name="cart" class="add-cart" title="Add to cart"></ion-icon>
+        </div>
+      </div>
+    
+
+      <!-- RIGHT: Cart -->
+      <aside class="cart" id="cart">
+        <div class="cart-title">Cart Items</div>
+        <div class="cart-content" id="cart-content"><!-- injected --></div>
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total-price">R0.00</div>
+        </div>
+        <button class="btn-buy" id="btn-buy">Place Order</button>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Toast container -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fmtZAR = new Intl.NumberFormat('en-ZA', { style: 'currency', currency: 'ZAR' });
+
+      // Elements
+      const cartContent  = document.getElementById('cart-content');
+      const cartCountEl  = document.getElementById('cart-count');
+      const totalPriceEl = document.getElementById('total-price');
+      const shopEl       = document.getElementById('shop');
+      const toastEl      = document.getElementById('toast');
+
+      // Store
+      const cart = {}; // { [sku]: { title, price, qty, img } }
+
+      // Toasts
+      function toast(msg) {
+        const el = document.createElement('div');
+        el.className = 'toast-item';
+        el.textContent = msg;
+        toastEl.appendChild(el);
+        setTimeout(() => { el.style.opacity = '0'; el.style.transform = 'translateY(-4px)'; }, 1800);
+        setTimeout(() => el.remove(), 2400);
+      }
+
+      // Totals
+      const totalItems = () => Object.values(cart).reduce((n, i) => n + i.qty, 0);
+      const totalPrice = () => Object.values(cart).reduce((s, i) => s + i.price * i.qty, 0);
+
+      function updateBadgeAndTotal() {
+        cartCountEl.textContent = totalItems();
+        totalPriceEl.textContent = fmtZAR.format(totalPrice());
+      }
+
+      // Render cart list
+      function renderCart() {
+        cartContent.innerHTML = '';
+        Object.entries(cart).forEach(([sku, item]) => {
+          const row = document.createElement('div');
+          row.className = 'cart-box';
+          row.dataset.sku = sku;
+          row.innerHTML = `
+            <img src="${item.img || ''}" class="cart-img" alt="${item.title}">
+            <div class="detail-box">
+              <div class="cart-food-title">${item.title}</div>
+              <div class="price-box">
+                <div class="cart-price">${fmtZAR.format(item.price)}</div>
+                <div class="cart-amt">${fmtZAR.format(item.price * item.qty)}</div>
+              </div>
+              <div class="qty">
+                <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                <span class="qty-value">${item.qty}</span>
+                <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            <ion-icon name="trash" class="cart-remove" title="Remove item"></ion-icon>
+          `;
+          cartContent.appendChild(row);
+        });
+        updateBadgeAndTotal();
+      }
+
+      function addToCart({ sku, title, price, img }) {
+        if (!cart[sku]) {
+          cart[sku] = { title, price, qty: 1, img };
+          toast(`Added: ${title} (x1)`);
+        } else {
+          cart[sku].qty += 1;
+          toast(`Increased: ${title} (x${cart[sku].qty})`);
+        }
+        renderCart();
+      }
+
+      function changeQty(sku, delta) {
+        const item = cart[sku];
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) {
+          const title = item.title;
+          delete cart[sku];
+          toast(`Removed: ${title}`);
+        } else {
+          toast(`Updated: ${item.title} (x${item.qty})`);
+        }
+        renderCart();
+      }
+
+      function removeItem(sku) {
+        const item = cart[sku];
+        if (!item) return;
+        const title = item.title;
+        delete cart[sku];
+        toast(`Removed: ${title}`);
+        renderCart();
+      }
+
+      // Add from shop (delegation)
+      shopEl.addEventListener('click', (e) => {
+        const btn = e.target.closest('.add-cart');
+        if (!btn) return;
+        const box = btn.closest('.food-box');
+        const sku   = box.dataset.sku;
+        const title = box.dataset.title || box.querySelector('.food-title')?.textContent?.trim();
+        const price = Number(box.dataset.price || 0);
+        const img   = box.dataset.img || box.querySelector('.food-img')?.getAttribute('src') || '';
+        addToCart({ sku, title, price, img });
+      });
+
+      // Qty +/- & remove (delegation inside cart)
+      cartContent.addEventListener('click', (e) => {
+        const row = e.target.closest('.cart-box');
+        if (!row) return;
+        const sku = row.dataset.sku;
+        if (e.target.closest('.minus')) changeQty(sku, -1);
+        else if (e.target.closest('.plus')) changeQty(sku, +1);
+        else if (e.target.closest('.cart-remove')) removeItem(sku);
+      });
+
+      // Place order (demo)
+      document.getElementById('btn-buy').addEventListener('click', () => {
+        if (Object.keys(cart).length === 0) {
+          toast('Your cart is empty');
+          alert('Your cart is empty. Add some shades first 😎');
+          return;
+        }
+        alert('Order placed! (Demo)');
+        for (const k in cart) delete cart[k];
+        toast('Order cleared');
+        renderCart();
+      });
+
+      // init
+      updateBadgeAndTotal();
+    });
+  </script>
+</body>
+</html>
+    <div class="row">
+      <div class="column" style="background-color:white;">
+                    <h2>Quick Links</h2>
+        <a href="privacy.html"><p>Privacy Policy</p></a>
+      </div>
+      <div class="column" style="background-color:white">
+                    <h2>About Us</h2>
+        <a href="ourstory.html"><p>Our Story</p></a>
+      </div>
+      <div class="column" style="background-color:white;">
+                    <h2>Follow Us</h2>
+        <a href="https://www.instagram.com/sunglasshut/"><p>Instagram</p></a>
+        <a href="https://www.facebook.com/sunglasshutglobal/"><p>Facebook</p></a>
+        <a href="https://www.tiktok.com/@sunglasshut?"><p>TikTok</p></a>
+        <a href="https://www.linkedin.com/company/sunglasshut"><p>LinkedIn</p></a>
+      </div>
+      <div class="column" style="background-color:white;">
+      <h2>Brands</h2>
+      <a href="rayban.html"><p>Ray-Ban</p></a>
+      <a href="versace.html"><p>Versace</p></a>
+      <a href="prada.html"><p>Prada</p></a>
+      <a href="gucci.html"><p>Gucci</p></a>
+    </div>
+      <div class="column" style="background-color:white;">
+                      <h2>Need Help?</h2>
+        <a href="tel:+27 86 100 0850"><p>Call: +27 86 100 0850</p></a>
+        <p>Monday - Friday: 9AM - 5PM</p>
+        <a href="info@sunglasshut.co.za"><p>info@sunglasshut.co.za</p></a>
+      </div>
+    </div>
+    
+  </footer> 
+  <p> &copy;2024 Sunglass Hut All Rights Reserved. | Pictures and images on the site are for illustration purposes only</p>     
+  </body>
+  </html>
